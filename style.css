@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body, html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  background: rgb(228,68,174);
+  background: linear-gradient(23deg, rgba(228,68,174,0.9366883116883117) 0%, rgba(109,134,198,1) 44%, rgba(0,203,255,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+#container{
+  display: grid;
+  justify-items: center;
+  margin-top: 60px;
+  background-color: rgb(255, 255, 255);
+}
+header{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#inputContainer{
+  width: 70vw;
+  padding: 20px;
+  display: flex;
+  justify-content:center;
+}
+input{
+  width: 90%;
+  height: 30px;
+  font-size: medium;
+}
+#addBtn{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+input:focus{
+  border-color: #8e49e8;
+}
+#addBtn:hover{
+  background: blueviolet;
+}
+.row{
+  background-color: rgb(239, 230, 248);
+  margin-bottom: 5px;
+  width: 70vw;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  transition: transform 1s;
+}
+footer{
+  margin-top: 10px;
+  text-align: center;
+  font-size: small;
+}
+.delBtn:hover{
+  background: rgba(243, 8, 8, 0.801);
+}
+.row:hover{
+  transform: scale(1.05);
+  background: rgb(103,63,251);
+  background: linear-gradient(90deg, rgba(103,63,251,1) 22%, rgba(50,167,208,1) 100%);
+}
