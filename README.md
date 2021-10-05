@@ -8,4 +8,4 @@ If a User tries to add an empty list, an alert message will be shown.
 User's list is stored in localstorage of the webpage.
 
 
-Address of the page: https://subham-bose.github.io/TodoList/
+You can check the page from here: https://subham-bose.github.io/TodoList/
