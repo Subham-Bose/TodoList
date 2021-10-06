@@ -17,7 +17,10 @@ inputbox.onkeydown = (e) =>{
     }else{
       ListArray = JSON.parse(getLocalStorageData);
     }
-    ListArray.push(value);
+    let newObj = {};
+    newObj.text = value;
+    newObj.class = "";
+    ListArray.push(newObj);
     localStorage.setItem("New Todo", JSON.stringify(ListArray));
     showTask();
   }
@@ -37,7 +40,10 @@ addBtn.onclick = () =>{
     }else{
       ListArray = JSON.parse(getLocalStorageData);
     }
-    ListArray.push(value);
+    let newObj = {};
+    newObj.text = value;
+    newObj.class = "notChecked";
+    ListArray.push(newObj);
     localStorage.setItem("New Todo", JSON.stringify(ListArray));
     showTask();
   }
@@ -54,7 +60,7 @@ function showTask(){
   }
   newLiTags = "";
   ListArray.forEach((element, index)=>{
-    newLiTags += `<div class="row" id = "${index}" draggable = "true" ondragstart="drag(event)"> <span>${element}</span> <button class="fa fa-trash-o delBtn"  onclick = "deleteTask(${index})"></button></div>`
+    newLiTags += `<div class="row" id = "${index}" draggable = "true" ondragstart="drag(event)"><span class = ${element.class}  onclick="check(${index})">${element.text}</span> <button class="fa fa-trash-o delBtn"  onclick = "deleteTask(${index})"></button></div>`
   })
   list.innerHTML = newLiTags
 }
@@ -66,6 +72,7 @@ function deleteTask(index){
   localStorage.setItem("New Todo", JSON.stringify(ListArray));
   showTask();
 }
+
 
 function allowDrop(event){
   event.preventDefault();
@@ -89,5 +96,18 @@ function drop(event){
   }
 }
 
-
+function check(index){
+  var checkBox = document.getElementById(`checkbox${index}`)
+  getLocalStorage = localStorage.getItem("New Todo")
+  ListArray = JSON.parse(getLocalStorage)
+  obj = ListArray[index];
+  if(obj.class == "isChecked"){
+    obj.class = "notChecked"
+  }else{
+    obj.class = "isChecked";
+  }
+  ListArray.splice(index,1,obj);
+  localStorage.setItem("New Todo", JSON.stringify(ListArray));
+  showTask();
+}
 

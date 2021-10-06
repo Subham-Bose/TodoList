@@ -66,3 +66,9 @@ footer{
   background: rgb(103,63,251);
   background: linear-gradient(90deg, rgba(103,63,251,1) 22%, rgba(50,167,208,1) 100%);
 }
+.isChecked{
+  text-decoration: line-through;
+}
+.notChecked{
+  text-decoration: none;
+}
