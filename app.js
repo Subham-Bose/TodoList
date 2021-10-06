@@ -19,7 +19,7 @@ inputbox.onkeydown = (e) =>{
     }
     let newObj = {};
     newObj.text = value;
-    newObj.class = "";
+    newObj.class = "notChecked";
     ListArray.push(newObj);
     localStorage.setItem("New Todo", JSON.stringify(ListArray));
     showTask();
